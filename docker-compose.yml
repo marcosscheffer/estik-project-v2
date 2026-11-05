@@ -10,8 +10,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       TZ: ${TZ}
-    ports:
-      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -42,8 +40,6 @@ services:
       SECRET_KEY: ${SECRET_KEY}
       STORAGE_SIGNING_SECRET: ${STORAGE_SIGNING_SECRET}
       TZ: ${TZ}
-    ports:
-      - "8080:8080"
     volumes:
       - estik_uploads:/app/uploads
     networks:
@@ -64,8 +60,6 @@ services:
     environment:
       BACKEND_URL: http://backend:8080
       TZ: ${TZ}
-    ports:
-      - "3000:80"
     networks:
       - web-net
   
@@ -79,7 +73,6 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
-      PGADMIN_CONFIG_SERVER_MODE: "False"
     ports:
       - "5050:80"
     volumes:
