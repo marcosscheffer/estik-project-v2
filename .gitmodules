@@ -1,0 +1,8 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:marcosscheffer/estik-java-api-v2.git
+	branch = main
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:marcosscheffer/estik-frontend-v2.git
+	branch = main
