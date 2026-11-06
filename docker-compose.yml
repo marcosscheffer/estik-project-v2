@@ -60,6 +60,8 @@ services:
     environment:
       BACKEND_URL: http://backend:8080
       TZ: ${TZ}
+    ports:
+      - ${FRONT_BIND:-3000}:80
     networks:
       - web-net
   
